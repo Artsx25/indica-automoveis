@@ -4,7 +4,7 @@ import { useNavigate } from 'react-router-dom'
 import {
   Search, ChevronRight, MessageCircle, Car, MapPin,
   Shield, DollarSign, RefreshCw, Phone, ExternalLink,
-  Gauge, Award
+  Gauge, Award, ShieldCheck
 } from 'lucide-react'
 import { vehicleRepository } from '@/domain/vehicle.repository'
 import { buildInventoryFacets, getAvailableModels } from '@/lib/filterFacets'
@@ -280,8 +280,16 @@ export default function HomePage() {
         <div className="container">
           <div className={styles.financingContent}>
             <div className={styles.financingText}>
+              <span className={styles.financingEyebrow}>Condições Especiais</span>
               <h2>Quer saber como pode ficar sua parcela?</h2>
               <p>Simulamos as melhores condições do mercado para você. Sem compromisso, sem burocracia.</p>
+              
+              <div className={styles.financingPills}>
+                <span className={styles.financingPill}>✓ Até 60x para pagar</span>
+                <span className={styles.financingPill}>✓ Opção sem entrada</span>
+                <span className={styles.financingPill}>✓ Resposta rápida</span>
+              </div>
+
               <a
                 href={getFinancingUrl({ make: '', model: '', title: '', price: 0 } as unknown as Vehicle)}
                 target="_blank"
@@ -296,8 +304,25 @@ export default function HomePage() {
                 <ChevronRight size={18} />
               </a>
             </div>
-            <div className={styles.financingIllustration}>
-              <DollarSign size={80} />
+
+            <div className={styles.financingVisualCard}>
+              <div className={styles.financingImgWrapper}>
+                <img
+                  src="/images/car-key-financing.jpg"
+                  alt="Chave do seu novo carro - Simulação de Financiamento na Indica Automóveis"
+                  className={styles.financingImg}
+                  loading="lazy"
+                />
+                <div className={styles.financingGlassBadge}>
+                  <div className={styles.financingBadgeIcon}>
+                    <ShieldCheck size={20} />
+                  </div>
+                  <div className={styles.financingBadgeText}>
+                    <strong>Crédito Facilitado</strong>
+                    <span>Santander • Itaú • Bradesco • BV • Pan</span>
+                  </div>
+                </div>
+              </div>
             </div>
           </div>
         </div>
