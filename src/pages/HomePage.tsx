@@ -16,6 +16,7 @@ import { track } from '@/lib/analytics'
 import { BODY_TYPE_LABELS } from '@/domain/vehicle.types'
 import type { Vehicle } from '@/domain/vehicle.types'
 import { Select } from '@/components/ui/Select'
+import { InstagramCarousel } from '@/components/instagram/InstagramCarousel'
 import styles from './HomePage.module.css'
 import { getBrandLogoPath } from '@/lib/brandLogos'
 
@@ -321,24 +322,8 @@ export default function HomePage() {
         </div>
       </section>
 
-      {/* Instagram */}
-      <section className={`${styles.section} ${styles.instagramSection}`}>
-        <div className="container">
-          <div className={styles.instagramContent}>
-            <ExternalLink size={40} className={styles.instagramIcon} />
-            <h2>Siga no Instagram</h2>
-            <p>{business.instagramHandle}</p>
-            <a
-              href={business.instagram}
-              target="_blank"
-              rel="noopener noreferrer"
-              className={styles.instagramBtn}
-            >
-              Seguir no Instagram
-            </a>
-          </div>
-        </div>
-      </section>
+      {/* Instagram Feed Carousel */}
+      <InstagramCarousel />
 
       {/* Localização */}
       <section className={`${styles.section} ${styles.locationSection}`}>
