@@ -1,8 +1,8 @@
 // src/components/instagram/InstagramCarousel.tsx
 import { useRef } from 'react'
-import { Heart, ChevronLeft, ChevronRight, ExternalLink } from 'lucide-react'
+import { Play, Eye, ChevronLeft, ChevronRight, ExternalLink } from 'lucide-react'
 import { business } from '@/config/business'
-import instagramPosts from '@/data/instagramPosts.json'
+import instagramReels from '@/data/instagramReels.json'
 import styles from './InstagramCarousel.module.css'
 
 function InstagramIcon({ size = 18, className }: { size?: number; className?: string }) {
@@ -25,6 +25,26 @@ function InstagramIcon({ size = 18, className }: { size?: number; className?: st
   )
 }
 
+function ReelsIcon({ size = 16, className }: { size?: number; className?: string }) {
+  return (
+    <svg
+      width={size}
+      height={size}
+      viewBox="0 0 24 24"
+      fill="none"
+      stroke="currentColor"
+      strokeWidth="2"
+      strokeLinecap="round"
+      strokeLinejoin="round"
+      className={className}
+    >
+      <rect width="18" height="18" x="3" y="3" rx="4" />
+      <path d="m9 9 6 3-6 3V9z" fill="currentColor" />
+      <path d="M7 3v4M17 3v4M3 7h18" />
+    </svg>
+  )
+}
+
 export function InstagramCarousel() {
   const trackRef = useRef<HTMLDivElement>(null)
 
@@ -39,16 +59,16 @@ export function InstagramCarousel() {
   }
 
   return (
-    <section className={styles.section} aria-label="Feed do Instagram">
+    <section className={styles.section} aria-label="Reels do Instagram">
       <div className="container">
         <div className={styles.header}>
           <div className={styles.headerInfo}>
             <span className={styles.eyebrow}>
-              <InstagramIcon size={14} /> Instagram Oficial
+              <ReelsIcon size={14} /> Instagram Reels Oficial
             </span>
-            <h2 className={styles.title}>Acompanhe a @indica.automoveis</h2>
+            <h2 className={styles.title}>Nossos Reels & Bastidores</h2>
             <p className={styles.subtitle}>
-              Confira os novos veículos em estoque, detalhes exclusivos e bastidores direto na nossa rede social.
+              Vídeos reais do nosso estoque, entregas e novidades gravados diretamente na loja.
             </p>
           </div>
 
@@ -58,7 +78,7 @@ export function InstagramCarousel() {
                 type="button"
                 className={styles.navBtn}
                 onClick={() => handleScroll('left')}
-                aria-label="Rolar posts para esquerda"
+                aria-label="Rolar reels para esquerda"
               >
                 <ChevronLeft size={20} />
               </button>
@@ -66,7 +86,7 @@ export function InstagramCarousel() {
                 type="button"
                 className={styles.navBtn}
                 onClick={() => handleScroll('right')}
-                aria-label="Rolar posts para direita"
+                aria-label="Rolar reels para direita"
                 style={{ marginLeft: 8 }}
               >
                 <ChevronRight size={20} />
@@ -74,48 +94,58 @@ export function InstagramCarousel() {
             </div>
 
             <a
-              href={business.instagram}
+              href={`${business.instagram}reels/`}
               target="_blank"
               rel="noopener noreferrer"
               className={styles.followBtn}
             >
-              <InstagramIcon size={16} /> Seguir Perfil
+              <InstagramIcon size={16} /> Ver Todos no Reels
             </a>
           </div>
         </div>
 
         <div className={styles.trackWrapper}>
           <div ref={trackRef} className={styles.track}>
-            {instagramPosts.map(post => (
+            {instagramReels.map(reel => (
               <a
-                key={post.id}
-                href={post.url}
+                key={reel.id}
+                href={reel.url}
                 target="_blank"
                 rel="noopener noreferrer"
                 className={styles.card}
+                aria-label={reel.title}
               >
                 <img
-                  src={post.image}
-                  alt={post.caption}
+                  src={reel.image}
+                  alt={reel.title}
                   className={styles.image}
                   loading="lazy"
                 />
-                <div className={styles.overlay}>
-                  <div className={styles.overlayTop}>
-                    <span className={styles.instaBadge}>
-                      <InstagramIcon size={12} /> @indica.automoveis
-                    </span>
+                <div className={styles.cardShade} />
+
+                {/* Top badges */}
+                <div className={styles.topBadges}>
+                  <span className={styles.tagBadge}>{reel.tag}</span>
+                  <span className={styles.viewsBadge}>
+                    <Eye size={11} /> {reel.views.replace(' visualizações', '')}
+                  </span>
+                </div>
+
+                {/* Center play icon */}
+                <div className={styles.playButtonWrapper}>
+                  <div className={styles.playButton}>
+                    <Play size={18} fill="#ffffff" stroke="none" />
                   </div>
-                  <div className={styles.overlayBottom}>
-                    <p className={styles.caption}>{post.caption}</p>
-                    <div className={styles.stats}>
-                      <span className={styles.likes}>
-                        <Heart size={13} fill="#ff4b5c" /> {post.likes} curtidas
-                      </span>
-                      <span className={styles.viewPost}>
-                        Ver post <ExternalLink size={11} />
-                      </span>
-                    </div>
+                </div>
+
+                {/* Bottom title & footer */}
+                <div className={styles.bottomInfo}>
+                  <p className={styles.reelTitle}>{reel.title}</p>
+                  <div className={styles.reelFooter}>
+                    <span className={styles.reelAccount}>@indica.automoveis</span>
+                    <span className={styles.watchLabel}>
+                      Assistir <ExternalLink size={11} />
+                    </span>
                   </div>
                 </div>
               </a>
