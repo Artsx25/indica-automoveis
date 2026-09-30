@@ -1,0 +1,108 @@
+/* src/pages/FinancingPage.module.css */
+.page {
+  max-width: 600px;
+  margin: 0 auto;
+  padding: var(--space-12) var(--space-6);
+  display: flex;
+  flex-direction: column;
+  gap: var(--space-8);
+}
+
+.header {
+  text-align: center;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: var(--space-3);
+}
+
+.headerIcon { color: var(--color-brand); }
+
+.header h1 { font-size: var(--text-4xl); font-weight: var(--font-extrabold); color: var(--color-text); }
+.header p { color: var(--color-text-secondary); line-height: 1.6; font-size: var(--text-base); }
+
+.form {
+  background: var(--color-surface);
+  border: 1px solid var(--color-border);
+  border-radius: var(--radius-2xl);
+  padding: var(--space-8);
+  display: flex;
+  flex-direction: column;
+  gap: var(--space-5);
+  box-shadow: var(--shadow-card);
+}
+
+.formGroup { display: flex; flex-direction: column; gap: var(--space-2); }
+.label { font-size: var(--text-sm); font-weight: var(--font-bold); color: var(--color-text); }
+
+.input, .select {
+  background: var(--color-surface-2);
+  border: 1px solid var(--color-border);
+  border-radius: var(--radius-md);
+  color: var(--color-text);
+  padding: var(--space-3);
+  font-size: var(--text-sm);
+  font-family: inherit;
+  outline: none;
+  transition: all var(--transition-fast);
+  width: 100%;
+}
+
+.input:focus, .select:focus {
+  border-color: var(--color-brand);
+  background: var(--color-surface);
+  box-shadow: 0 0 0 3px rgba(225, 29, 41, 0.1);
+}
+
+.checkLabel {
+  display: flex;
+  align-items: center;
+  gap: var(--space-3);
+  font-size: var(--text-sm);
+  font-weight: var(--font-semibold);
+  color: var(--color-text);
+  cursor: pointer;
+  user-select: none;
+  padding: var(--space-1) 0;
+}
+
+.checkLabel input {
+  accent-color: var(--color-brand);
+  width: 22px;
+  height: 22px;
+  cursor: pointer;
+  flex-shrink: 0;
+  margin: 0;
+}
+
+.btn {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: var(--space-2);
+  padding: var(--space-4);
+  background: var(--color-brand);
+  color: #fff;
+  border-radius: var(--radius-md);
+  font-size: var(--text-base);
+  font-weight: var(--font-bold);
+  text-decoration: none;
+  box-shadow: 0 4px 14px rgba(225, 29, 41, 0.3);
+  transition: all var(--transition-base);
+  margin-top: var(--space-2);
+}
+
+.btn:hover { background: var(--color-brand-dark); transform: translateY(-1px); }
+
+.disclaimer {
+  font-size: var(--text-xs);
+  color: var(--color-muted);
+  text-align: center;
+  line-height: 1.5;
+}
+
+@media (max-width: 600px) {
+  .page { padding: var(--space-6) var(--space-4); }
+  .form { padding: var(--space-6); }
+  .header h1 { font-size: 2.2rem; }
+}

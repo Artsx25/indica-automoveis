@@ -1,0 +1,8 @@
+/* src/pages/PrivacyPage.module.css */
+.page { max-width: 760px; margin: 0 auto; padding: var(--space-12) var(--space-6); }
+.page h1 { font-size: var(--text-4xl); font-weight: var(--font-extrabold); margin-bottom: var(--space-2); color: var(--color-text); }
+.updated { color: var(--color-muted); font-size: var(--text-sm); margin-bottom: var(--space-8); }
+.content { display: flex; flex-direction: column; gap: var(--space-5); background: var(--color-surface); border: 1px solid var(--color-border); border-radius: var(--radius-xl); padding: var(--space-8); box-shadow: var(--shadow-sm); }
+.content h2 { font-size: var(--text-xl); font-weight: var(--font-bold); color: var(--color-text); margin-top: var(--space-3); }
+.content p { color: var(--color-text-secondary); line-height: 1.7; font-size: var(--text-base); }
+@media (max-width: 600px) { .page { padding: var(--space-6) var(--space-4); } .content { padding: var(--space-5); } }

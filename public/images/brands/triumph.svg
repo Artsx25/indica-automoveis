@@ -1,0 +1,5 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 120 40" fill="none">
+  <!-- Triumph script stylized text -->
+  <text x="60" y="28" font-family="'Trebuchet MS', 'Arial Black', sans-serif" font-size="22" font-weight="900" font-style="italic" fill="#111111" text-anchor="middle" letter-spacing="2">TRIUMPH</text>
+  <path d="M12 32 C30 35 90 35 108 32" stroke="#990000" stroke-width="2.5" stroke-linecap="round"/>
+</svg>

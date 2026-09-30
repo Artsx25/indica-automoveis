@@ -1,0 +1,6 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 100 80" fill="none">
+  <!-- Top chevron -->
+  <path d="M15 32 L50 8 L85 32 L73 38 L50 20 L27 38 Z" fill="#990000"/>
+  <!-- Bottom chevron -->
+  <path d="M15 62 L50 38 L85 62 L73 68 L50 50 L27 68 Z" fill="#990000"/>
+</svg>

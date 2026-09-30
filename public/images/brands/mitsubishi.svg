@@ -1,0 +1,8 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 100 90" fill="none">
+  <!-- Top diamond -->
+  <polygon points="50,5 65,30 50,55 35,30" fill="#E60012"/>
+  <!-- Bottom left diamond -->
+  <polygon points="35,30 20,55 5,80 20,80 35,55 50,55" fill="#E60012"/>
+  <!-- Bottom right diamond -->
+  <polygon points="65,30 80,55 95,80 80,80 65,55 50,55" fill="#E60012"/>
+</svg>

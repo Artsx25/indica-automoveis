@@ -1,0 +1,109 @@
+/* src/components/ui/Button.module.css */
+
+.btn {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: var(--space-2);
+  font-family: var(--font-sans);
+  font-weight: var(--font-semibold);
+  letter-spacing: 0.01em;
+  border-radius: var(--radius-md);
+  border: 2px solid transparent;
+  cursor: pointer;
+  transition: all var(--transition-base);
+  white-space: nowrap;
+  text-decoration: none;
+  line-height: 1;
+}
+
+.btn:disabled,
+.loading {
+  opacity: 0.6;
+  pointer-events: none;
+}
+
+/* Sizes */
+.size-sm {
+  font-size: var(--text-sm);
+  padding: var(--space-2) var(--space-4);
+  height: 36px;
+}
+
+.size-md {
+  font-size: var(--text-sm);
+  padding: var(--space-3) var(--space-5);
+  height: 44px;
+}
+
+.size-lg {
+  font-size: var(--text-base);
+  padding: var(--space-4) var(--space-8);
+  height: 52px;
+}
+
+/* Variants */
+.variant-primary {
+  background: var(--color-brand);
+  color: var(--color-brand-contrast);
+  border-color: var(--color-brand);
+}
+.variant-primary:hover {
+  background: var(--color-brand-dark);
+  border-color: var(--color-brand-dark);
+  transform: translateY(-1px);
+  box-shadow: var(--shadow-brand);
+}
+
+.variant-secondary {
+  background: var(--color-surface-2);
+  color: var(--color-text);
+  border-color: var(--color-border);
+}
+.variant-secondary:hover {
+  background: var(--color-surface-3);
+  border-color: var(--color-border-hover);
+}
+
+.variant-outline {
+  background: transparent;
+  color: var(--color-brand);
+  border-color: var(--color-brand);
+}
+.variant-outline:hover {
+  background: var(--color-brand);
+  color: var(--color-brand-contrast);
+}
+
+.variant-ghost {
+  background: transparent;
+  color: var(--color-text-secondary);
+  border-color: transparent;
+}
+.variant-ghost:hover {
+  background: var(--color-surface-2);
+  color: var(--color-text);
+}
+
+.variant-whatsapp {
+  background: #25d366;
+  color: #fff;
+  border-color: #25d366;
+}
+.variant-whatsapp:hover {
+  background: #1da851;
+  border-color: #1da851;
+  transform: translateY(-1px);
+}
+
+/* Full width */
+.fullWidth {
+  width: 100%;
+}
+
+/* Icon */
+.icon {
+  display: flex;
+  align-items: center;
+  flex-shrink: 0;
+}

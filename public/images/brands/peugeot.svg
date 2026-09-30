@@ -1,0 +1,6 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 100 100" fill="none">
+  <path d="M20 10 L80 10 L90 60 L50 95 L10 60 Z" stroke="#111111" stroke-width="4" fill="none"/>
+  <text x="50" y="24" font-family="'Arial Black', sans-serif" font-size="10" font-weight="bold" fill="#111111" text-anchor="middle" letter-spacing="1">PEUGEOT</text>
+  <path d="M38 42 C42 35 58 35 62 42 C65 48 60 58 50 65 C40 58 35 48 38 42 Z" fill="#111111"/>
+  <polygon points="50,68 45,78 55,78" fill="#111111"/>
+</svg>
